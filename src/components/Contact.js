@@ -173,7 +173,7 @@ export default function Contact() {
                     background: `conic-gradient(from 0deg, transparent 0deg, transparent 150deg, #a855f7 180deg, transparent 210deg, transparent 360deg)`
                   }}
                   animate={{ rotate: 360 }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
                 />
                 <div className="relative bg-white dark:bg-zinc-900 p-6 rounded-[1.45rem] border border-zinc-100 dark:border-zinc-800 transition-all duration-500 flex flex-col items-center text-center gap-2 z-10">
                   <div className="text-zinc-900 dark:text-blue-400 mb-1">

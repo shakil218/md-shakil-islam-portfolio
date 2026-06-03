@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { initTextReveal } from "../lib/animations";
 import { Download, Award, Briefcase, Headphones } from "lucide-react";
+import Link from "next/link";
 import Image from "next/image";
 import image from "../assets/3D image2.png";
 
@@ -95,30 +96,38 @@ export default function About() {
 
           <div className="space-y-6">
             <p className="text-secondary dark:text-gray-400 text-base leading-relaxed font-medium reveal-about">
-             I’m a web developer focused on building scalable, high-performance web applications using React.js, Next.js, and Node.js. I craft clean, responsive, and intuitive user interfaces backed by efficient backend logic and MongoDB. My focus is on delivering seamless digital experiences with maintainable and production-ready code.
+              I’m a web developer focused on building scalable, high-performance
+              web applications using React.js, Next.js, and Node.js. I craft
+              clean, responsive, and intuitive user interfaces backed by
+              efficient backend logic and MongoDB. My focus is on delivering
+              seamless digital experiences with maintainable and
+              production-ready code.
             </p>
 
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="relative bg-[linear-gradient(135deg,#4b5964,#2f3a42,#0f1113)] dark:bg-[linear-gradient(135deg,#1e293b,#0f172a,#020617)] text-white px-10 py-4 rounded-xl font-bold flex items-center gap-3 overflow-hidden group shadow-xl"
+            <Link
+              href="https://drive.google.com/file/d/14fsh9FaRbVj8YUlxg9qxnwC5v_6HmOvI/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex"
             >
-              <div className="absolute inset-0 w-[200%] h-[200%] bg-linear-to-br from-white/60 via-white/30 to-transparent -translate-x-full -translate-y-full animate-glow transition-all"></div>
-
-              <span className="relative z-10">Download Resume</span>
               <motion.div
-                animate={{ y: [0, 5, 0] }}
-                transition={{ repeat: Infinity, duration: 2 }}
-                className="relative z-10"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="relative bg-[linear-gradient(135deg,#4b5964,#2f3a42,#0f1113)] dark:bg-[linear-gradient(135deg,#1e293b,#0f172a,#020617)] text-white px-10 py-4 rounded-xl font-bold flex items-center gap-3 overflow-hidden group shadow-xl cursor-pointer"
               >
-                <Download
-                  size={20}
-                  fill="currentColor"
-                  fillOpacity={0.2}
-                  strokeWidth={2.5}
-                />
+                <div className="absolute inset-0 w-[200%] h-[200%] bg-linear-to-br from-white/60 via-white/30 to-transparent -translate-x-full -translate-y-full animate-glow transition-all"></div>
+
+                <span className="relative z-10">Download Resume</span>
+
+                <motion.div
+                  animate={{ y: [0, 5, 0] }}
+                  transition={{ repeat: Infinity, duration: 2 }}
+                  className="relative z-10"
+                >
+                  <Download size={20} />
+                </motion.div>
               </motion.div>
-            </motion.button>
+            </Link>
           </div>
         </div>
       </div>

@@ -12,8 +12,19 @@ import phApps from "../assets/project_8.png";
 import keenKeeper from "../assets/project_5.png";
 import dragonNews from "../assets/project_3.png";
 import skillSphere from "../assets/project_6.png";
+import petNest from "../assets/petnest.png";
 
 const projects = [
+  {
+    title: "PetNest: Pet Adoption & Care Platform",
+    description:
+      "A full-stack pet adoption and care platform built with a modern MERN-based architecture. It enables users to browse adoptable pets, submit adoption requests, and manage their profiles through a secure dashboard. The system includes authentication, role-based access control, and a scalable REST API built with Express.js and MongoDB. The frontend is highly interactive with smooth Framer Motion animations and a clean UI powered by HeroUI and Tailwind CSS.",
+    tags: ["Next.js", "React", "Node.js", "Express.js", "MongoDB", "Better Auth", "HeroUI", "Tailwind CSS", "Framer Motion"
+    ],
+    image: petNest,
+    github: "https://github.com/your-username/petnest",
+    demo: "https://petnest-demo.vercel.app"
+  },
   {
   title: "SkillSphere: Master Skills Online",
   description: "A modern e-learning platform providing a wide range of expert-led courses and structured learning paths. Features fluid animations with Framer Motion, secure user authentication via Better Auth, and an intuitive dashboard for tracking educational progress and skill mastery.",
