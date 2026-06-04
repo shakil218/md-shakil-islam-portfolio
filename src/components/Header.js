@@ -2,15 +2,25 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
-import { Sun, Moon, Menu } from "lucide-react";
+import {
+  Sun,
+  Moon,
+  Menu,
+  House,
+  User,
+  Code2,
+  BriefcaseBusiness,
+  FolderGit2,
+  Phone,
+} from "lucide-react";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Services", href: "#services" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "#home", icon: House },
+  { name: "About", href: "#about", icon: User },
+  { name: "Skills", href: "#skills", icon: Code2 },
+  { name: "Services", href: "#services", icon: BriefcaseBusiness },
+  { name: "Projects", href: "#projects", icon: FolderGit2 },
+  { name: "Contact", href: "#contact", icon: Phone },
 ];
 
 export default function Header() {
@@ -27,9 +37,9 @@ export default function Header() {
     };
 
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
 
     const observerOptions = {
@@ -46,7 +56,10 @@ export default function Header() {
       });
     };
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions,
+    );
     const sections = document.querySelectorAll("section[id]");
     sections.forEach((section) => observer.observe(section));
 
@@ -58,14 +71,17 @@ export default function Header() {
     };
   }, [isOpen]);
 
-  if (!mounted) return (
-    <header className="fixed top-0 w-full z-50 bg-transparent py-4 opacity-0 transition-none">
-      <nav className="px-6 md:px-24 max-w-7xl mx-auto h-10" />
-    </header>
-  );
+  if (!mounted)
+    return (
+      <header className="fixed top-0 w-full z-50 bg-transparent py-4 opacity-0 transition-none">
+        <nav className="px-6 md:px-24 max-w-7xl mx-auto h-10" />
+      </header>
+    );
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/75 dark:bg-[#0f1113]/75 backdrop-blur-md border-b border-zinc-100 dark:border-zinc-800 py-2' : 'bg-transparent py-4'}`}>
+    <header
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white/75 dark:bg-[#0f1113]/75 backdrop-blur-md border-b border-zinc-100 dark:border-zinc-800 py-2" : "bg-transparent py-4"}`}
+    >
       <nav className="flex justify-between items-center px-6 md:px-24 max-w-7xl mx-auto">
         <div className="flex items-center">
           <motion.div
@@ -76,22 +92,29 @@ export default function Header() {
             <div className="w-10 h-10 bg-primary/10 dark:bg-white/10 rounded-lg flex items-center justify-center font-black text-primary dark:text-white border border-primary/20 dark:border-white/20">
               SI
             </div>
-            <span className="font-extrabold text-xl tracking-tighter text-primary dark:text-white">SHAKIL.</span>
+            <span className="font-extrabold text-xl tracking-tighter text-primary dark:text-white">
+              SHAKIL.
+            </span>
           </motion.div>
         </div>
-        
+
         <div className="hidden md:flex items-center space-x-10 text-xs font-bold uppercase tracking-widest">
           {navLinks.map((link) => {
+            const Icon = link.icon;
             const isActive = activeSection === link.href.substring(1);
             return (
-              <a 
+              <a
                 key={link.name}
-                href={link.href} 
-                className={`relative py-1 transition-colors duration-300 ${isActive ? 'text-primary dark:text-white' : 'text-secondary dark:text-gray-400 hover:text-primary dark:hover:text-white'}`}
+                href={link.href}
+                className={`relative py-1 transition-colors duration-300 ${isActive ? "text-primary dark:text-white" : "text-secondary dark:text-gray-400 hover:text-primary dark:hover:text-white"}`}
               >
-                {link.name}
+                <div className="flex items-center gap-2">
+
+                <Icon size={16} />
+                <span>{link.name}</span>
+                </div>
                 {isActive && (
-                  <motion.div 
+                  <motion.div
                     layoutId="nav-underline"
                     className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary dark:bg-white rounded-full"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
@@ -104,14 +127,14 @@ export default function Header() {
 
         <div className="flex items-center gap-4">
           <button
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             className="p-2 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-primary dark:text-white hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
             aria-label="Toggle theme"
           >
-            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+            {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
           </button>
-          
-          <button 
+
+          <button
             className="md:hidden p-2 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-primary dark:text-white"
             onClick={() => setIsOpen(!isOpen)}
           >
@@ -134,7 +157,7 @@ export default function Header() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`text-2xl font-black uppercase tracking-tighter transition-colors ${activeSection === link.href.substring(1) ? 'text-primary dark:text-white' : 'text-zinc-400 dark:text-zinc-600'}`}
+                className={`text-2xl font-black uppercase tracking-tighter transition-colors ${activeSection === link.href.substring(1) ? "text-primary dark:text-white" : "text-zinc-400 dark:text-zinc-600"}`}
               >
                 {link.name}
               </a>
