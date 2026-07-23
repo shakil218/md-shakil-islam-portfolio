@@ -48,7 +48,7 @@ export default function TechStack({ sectionId = "tech" }) {
   return (
     <section id={sectionId} className="py-20 text-center bg-zinc-50 dark:bg-zinc-950/20 transition-colors duration-300">
       <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-zinc-900 dark:text-white">Technologies</h2>
-      <p className="text-zinc-500 dark:text-gray-400 text-sm mb-16 uppercase tracking-widest font-bold">My Tech Stack (Advanced to Basics)</p>
+      <p className="text-zinc-500 dark:text-gray-400 text-sm mb-16 uppercase tracking-widest font-bold">My Tech Stack</p>
       
       <div className="max-w-5xl mx-auto px-6 flex flex-wrap justify-center gap-6">
         {techs.map((tech, idx) => (
