@@ -16,11 +16,56 @@ import image_1 from "../assets/professional-img.png";
 import image_2 from "../assets/professional-image-2.png";
 
 const roles = [
-  "Web Developer",
+  "Full-Stack Developer",
   "Problem Solver",
-  "Web Designer",
-  "Full Stack Developer",
+  "React & Next.js Specialist",
+  "MERN Stack Architect",
+  "UI/UX Enthusiast",
 ];
+
+function TypewriterRole({ roles }) {
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+  const [currentText, setCurrentText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const fullText = roles[currentRoleIndex];
+    let speed = isDeleting ? 35 : 75;
+
+    if (!isDeleting && currentText === fullText) {
+      speed = 2200;
+    } else if (isDeleting && currentText === "") {
+      setIsDeleting(false);
+      setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
+      speed = 250;
+    }
+
+    const timer = setTimeout(() => {
+      setCurrentText(
+        isDeleting
+          ? fullText.substring(0, currentText.length - 1)
+          : fullText.substring(0, currentText.length + 1)
+      );
+
+      if (!isDeleting && currentText === fullText) {
+        setIsDeleting(true);
+      }
+    }, speed);
+
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, currentRoleIndex, roles]);
+
+  return (
+    <span className="inline-flex items-center text-primary dark:text-white whitespace-nowrap font-bold">
+      {currentText}
+      <motion.span
+        animate={{ opacity: [1, 0, 1] }}
+        transition={{ repeat: Infinity, duration: 0.8 }}
+        className="ml-1 inline-block w-0.5 h-[1.1em] bg-primary dark:bg-white align-middle"
+      />
+    </span>
+  );
+}
 
 const XIcon = ({ size = 24 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -28,9 +73,11 @@ const XIcon = ({ size = 24 }) => (
   </svg>
 );
 
+const introParagraph =
+  "Crafting high-performance, scalable web applications and intuitive digital experiences. Specialized in React.js, Next.js, Node.js, and modern web architectures to solve complex engineering challenges.";
+
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
-  const [roleIndex, setRoleIndex] = useState(0);
   const [imgIndex, setImgIndex] = useState(0);
 
   const profileImages = [image_1, image_2];
@@ -39,16 +86,11 @@ export default function Hero() {
     setMounted(true);
     initTextReveal(".reveal-about");
 
-    const roleInterval = setInterval(() => {
-      setRoleIndex((prev) => (prev + 1) % roles.length);
-    }, 3000);
-
     const imgInterval = setInterval(() => {
       setImgIndex((prev) => (prev + 1) % profileImages.length);
     }, 5000);
 
     return () => {
-      clearInterval(roleInterval);
       clearInterval(imgInterval);
     };
   }, [profileImages.length]);
@@ -117,33 +159,40 @@ export default function Hero() {
               Shakil Islam<span className="inline-block animate-wave">👋</span>
             </h1>
 
-            <div className="text-2xl font-bold text-secondary dark:text-gray-300 flex items-center gap-2">
+            <div className="text-xl md:text-2xl font-bold text-secondary dark:text-gray-300 flex flex-wrap items-center gap-2">
               <span className="reveal-text whitespace-nowrap min-w-fit">
                 I am a
               </span>
-              <div className="relative h-[1.5em] w-64 overflow-hidden">
-                <AnimatePresence mode="wait">
-                  <motion.span
-                    key={roles[roleIndex]}
-                    initial={{ y: "100%", opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: "-100%", opacity: 0 }}
-                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                    className="absolute inset-0 text-primary dark:text-white whitespace-nowrap flex items-center"
-                  >
-                    {roles[roleIndex]}
-                  </motion.span>
-                </AnimatePresence>
+              <div className="relative min-h-[1.5em] flex items-center whitespace-nowrap">
+                <TypewriterRole roles={roles} />
               </div>
             </div>
+
+            {/* Relevant paragraph with text-based word-stagger reveal */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1 }}
-              className="space-y-1 reveal-about text-secondary dark:text-gray-400 text-base leading-relaxed max-w-sm font-medium"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                visible: {
+                  transition: { staggerChildren: 0.02, delayChildren: 0.2 },
+                },
+              }}
+              className="space-y-1 reveal-about text-secondary dark:text-gray-400 text-base leading-relaxed max-w-md font-medium"
             >
-              <p>🚀 Turning ideas into Stunning Websites💻</p>
-              <p>| Available for projects and collaborations☀️</p>
+              <p>
+                {introParagraph.split(" ").map((word, idx) => (
+                  <motion.span
+                    key={idx}
+                    variants={{
+                      hidden: { opacity: 0, y: 6 },
+                      visible: { opacity: 1, y: 0 },
+                    }}
+                    className="inline-block mr-1.5"
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+              </p>
             </motion.div>
           </div>
 

@@ -96,16 +96,16 @@ export default function About() {
 
           <div className="space-y-6">
             <p className="text-secondary dark:text-gray-400 text-base leading-relaxed font-medium reveal-about">
-              I’m a web developer focused on building scalable, high-performance
-              web applications using React.js, Next.js, and Node.js. I craft
-              clean, responsive, and intuitive user interfaces backed by
-              efficient backend logic and MongoDB. My focus is on delivering
-              seamless digital experiences with maintainable and
-              production-ready code.
+              I am a passionate Full-Stack Developer with expertise in building
+              scalable, high-performance web applications using React.js,
+              Next.js, and Node.js. With a strong focus on clean architecture,
+              intuitive UI/UX design, and robust backend logic with MongoDB &
+              PostgreSQL, I transform complex ideas into seamless,
+              production-ready digital solutions.
             </p>
 
             <Link
-              href="https://drive.google.com/file/d/14fsh9FaRbVj8YUlxg9qxnwC5v_6HmOvI/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1v7DMp42aHfAHF2kYOT7TCxlj-RdZK-yF/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex"
@@ -117,7 +117,7 @@ export default function About() {
               >
                 <div className="absolute inset-0 w-[200%] h-[200%] bg-linear-to-br from-white/60 via-white/30 to-transparent -translate-x-full -translate-y-full animate-glow transition-all"></div>
 
-                <span className="relative z-10">Download Resume</span>
+                <span className="relative z-10">Download CV</span>
 
                 <motion.div
                   animate={{ y: [0, 5, 0] }}

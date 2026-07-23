@@ -5,22 +5,29 @@ import { useEffect, useState } from 'react';
 
 const skills = {
   frontend: [
-    { name: "HTML5", level: "Expert" },
-    { name: "NextJS", level: "Expert" },
-    { name: "TypeScript", level: "Expert" },
-    { name: "Tailwind Css", level: "Intermediate" },
-    { name: "JavaScript", level: "Expert" },
     { name: "ReactJS", level: "Expert" },
+    { name: "NextJS", level: "Expert" },
+    { name: "JavaScript", level: "Expert" },
+    { name: "HTML5", level: "Expert" },
+    { name: "Tailwind Css", level: "Advanced" },
+    { name: "TypeScript", level: "Advanced" },
+    { name: "Redux Toolkit", level: "Intermediate" },
   ],
   backend: [
     { name: "NodeJS", level: "Expert" },
     { name: "ExpressJS", level: "Expert" },
     { name: "MongoDB", level: "Expert" },
+    { name: "PostgreSQL", level: "Advanced" },
+    { name: "Prisma", level: "Intermediate" },
+    { name: "Socket.IO", level: "Intermediate" },
   ],
   tools: [
-    { name: "Git", level: "Advanced" },
-    { name: "GitHub", level: "Advanced" },
+    { name: "Git", level: "Expert" },
+    { name: "GitHub", level: "Expert" },
     { name: "VS Code", level: "Expert" },
+    { name: "Vercel", level: "Advanced" },
+    { name: "Docker", level: "Intermediate" },
+    { name: "Kubernetes", level: "Basic" },
   ],
 };
 

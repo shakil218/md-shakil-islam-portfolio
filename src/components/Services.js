@@ -2,53 +2,53 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 import { initTextReveal } from '../lib/animations';
-import { Layout, Server, Database, ArrowRight, X, CheckCircle2, Code, Rocket } from "lucide-react";
+import { Layout, Server, Database, ArrowRight, X, CheckCircle2 } from "lucide-react";
 
 const services = [
   { 
     title: "Frontend Development", 
     icon: Layout,
     glowColor: "#3b82f6",
-    desc: "Crafting beautiful, accessible, and fast web experiences using modern frameworks.",
+    desc: "Designing and building responsive, high-performance web applications with Next.js, React, and modern CSS architectures.",
     details: [
-      "Responsive and adaptive UI designs",
-      "Modern animations with Framer Motion",
-      "Performance-focused development",
-      "Highly interactive user interfaces",
-      "Reusable component design systems"
+      "Responsive, mobile-first design with Tailwind CSS & DaisyUI",
+      "Fluid micro-animations with Framer Motion & GSAP",
+      "Performance optimization & accessibility best practices",
+      "SEO optimization & server-side rendering (SSR/SSG)",
+      "Clean, component-driven UI system architecture"
     ]
   },
   { 
-    title: "Backend Development", 
+    title: "Backend & API Development", 
     icon: Server,
     glowColor: "#a855f7",
-    desc: "Building robust APIs, database architectures, and secure server-side logic.",
+    desc: "Architecting scalable server-side systems, REST APIs, and database schemas with Node.js, Express, and MongoDB.",
     details: [
-      "RESTful and GraphQL API development",
-      "Secure authentication systems (JWT/OAuth)",
-      "Database modeling and optimization (NoSQL/SQL)",
-      "Server-side efficiency and caching",
-      "Cloud functions and serverless architecture"
+      "Robust RESTful API design & integration",
+      "Secure authentication & authorization (Better Auth / JWT)",
+      "Database schema modeling & query optimization (MongoDB / SQL)",
+      "Real-time bidirectional communication with Socket.IO",
+      "Security middleware, rate-limiting & error logging"
     ]
   },
   { 
-    title: "Full Stack Development", 
+    title: "Full-Stack Web Engineering", 
     icon: Database,
     glowColor: "#10b981",
-    desc: "End-to-end solutions combining elegant frontends with powerful backends.",
+    desc: "Delivering end-to-end web applications combining intuitive user interfaces with scalable, production-ready backend infrastructure.",
     details: [
-      "Complete end-to-end web applications",
-      "Seamless frontend & backend integration",
-      "DevOps and deployment management",
-      "System architecture and planning",
-      "Scalable production-ready solutions"
+      "Complete MERN / Next.js full-stack web solutions",
+      "Seamless state management & frontend-backend integration",
+      "DevOps, CI/CD pipelines & cloud deployment (Vercel)",
+      "System architecture planning & performance tuning",
+      "Maintainable, enterprise-grade production codebases"
     ]
   },
 ];
 
 export default function Services() {
   const [activeService, setActiveService] = useState(null);
-const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -63,7 +63,6 @@ const [mounted, setMounted] = useState(false);
       </section>
     );
   }
-
 
   return (
     <section id="services" className="pb-16 px-6 md:px-24 max-w-7xl mx-auto text-center bg-zinc-50/50 dark:bg-zinc-950/20 overflow-hidden transition-colors duration-300">
@@ -176,7 +175,7 @@ const [mounted, setMounted] = useState(false);
                       transition={{ delay: 0.1 + i * 0.05 }}
                       className="flex items-start gap-3"
                     >
-                      <CheckCircle2 size={18} className="mt-0.5" style={{ color: activeService.glowColor }} />
+                      <CheckCircle2 size={18} className="mt-0.5 shrink-0" style={{ color: activeService.glowColor }} />
                       <span className="text-sm font-medium text-zinc-700 dark:text-gray-300">{detail}</span>
                     </motion.div>
                   ))}
