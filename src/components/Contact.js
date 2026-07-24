@@ -1,18 +1,7 @@
 "use client";
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, Linkedin, Send, X, Monitor, Globe, ArrowRight, CheckCircle2 } from "lucide-react";
-
-const XIcon = ({ size = 24 }) => (
-  <svg 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
-    fill="currentColor"
-  >
-    <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932L18.901 1.153zM17.61 20.644h2.039L6.486 3.24H4.298L17.61 20.644z" />
-  </svg>
-);
+import { Mail, Linkedin, Send, X, Monitor, Globe, ArrowRight, CheckCircle2, Phone } from "lucide-react";
 
 export default function Contact() {
    const [mounted, setMounted] = useState(false);
@@ -34,7 +23,7 @@ export default function Contact() {
     );
   }
 
-  const emailAddress = "mdshakilislamsagor218@gmail.com";
+  const emailAddress = "dev.shakilislam@gmail.com";
 
   const handleMailAction = (type) => {
     if (type === 'gmail') {
@@ -164,7 +153,7 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
               className="group relative cursor-pointer"
-              onClick={() => window.open('https://x.com/md_islam94991', '_blank')}
+              onClick={() => window.open('https://wa.me/8801763386000', '_blank')}
             >
               <div className="relative p-[1.5px] rounded-3xl overflow-hidden transition-all duration-500 group-hover:-translate-y-1">
                 <motion.div 
@@ -177,12 +166,12 @@ export default function Contact() {
                 />
                 <div className="relative bg-white dark:bg-zinc-900 p-6 rounded-[1.45rem] border border-zinc-100 dark:border-zinc-800 transition-all duration-500 flex flex-col items-center text-center gap-2 z-10">
                   <div className="text-zinc-900 dark:text-blue-400 mb-1">
-                    <XIcon size={24} />
+                    <Phone size={24} strokeWidth={1.5} />
                   </div>
-                  <div className="font-bold text-zinc-800 dark:text-gray-200 text-sm">Twitter</div>
-                  <div className="text-xs text-zinc-500 dark:text-gray-400 mb-1">@md_islam94991</div>
+                  <div className="font-bold text-zinc-800 dark:text-gray-200 text-sm">WhatsApp</div>
+                  <div className="text-xs text-zinc-500 dark:text-gray-400 mb-1">+8801763386000</div>
                   <button className="text-[11px] font-bold text-zinc-400 group-hover:text-[#a855f7] dark:group-hover:text-blue-400 flex items-center gap-1 transition-colors uppercase tracking-widest" suppressHydrationWarning>
-                    Visit profile <ArrowRight size={14} />
+                    Write me <ArrowRight size={14} />
                   </button>
                 </div>
               </div>

@@ -1,17 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Linkedin, Twitter, Github, ArrowUp } from "lucide-react";
-
-const XIcon = ({ size = 18 }) => (
-  <svg 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
-    fill="currentColor"
-  >
-    <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932L18.901 1.153zM17.61 20.644h2.039L6.486 3.24H4.298L17.61 20.644z" />
-  </svg>
-);
+import { Linkedin, Phone, Github, ArrowUp } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -29,12 +18,13 @@ export default function Footer() {
             <Linkedin size={18} strokeWidth={1.5} />
           </a>
           <a 
-            href="https://x.com/md_islam94991" 
+            href="https://wa.me/8801763386000" 
             target="_blank" 
             rel="noopener noreferrer"
+            title="WhatsApp"
             className="w-10 h-10 rounded-full border border-zinc-200 dark:border-zinc-800 flex items-center justify-center text-zinc-600 dark:text-gray-400 hover:text-[#a855f7] dark:hover:text-blue-400 hover:border-[#a855f7] dark:hover:border-blue-400 transition-all bg-white dark:bg-zinc-900 shadow-sm"
           >
-            <XIcon size={16} />
+            <Phone size={18} strokeWidth={1.5} />
           </a>
           <a 
             href="https://github.com/shakil218" 

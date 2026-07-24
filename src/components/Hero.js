@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { initTextReveal } from "../lib/animations";
 import {
   Linkedin,
+  Phone,
   Github,
   Send,
   Mouse,
@@ -67,12 +68,6 @@ function TypewriterRole({ roles }) {
   );
 }
 
-const XIcon = ({ size = 24 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932L18.901 1.153zM17.61 20.644h2.039L6.486 3.24H4.298L17.61 20.644z" />
-  </svg>
-);
-
 const introParagraph =
   "Crafting high-performance, scalable web applications and intuitive digital experiences. Specialized in React.js, Next.js, Node.js, and modern web architectures to solve complex engineering challenges.";
 
@@ -127,7 +122,7 @@ export default function Hero() {
               Icon: Linkedin,
               href: "https://www.linkedin.com/in/md-shakil-islam-sagor/",
             },
-            { Icon: XIcon, href: "https://x.com/md_islam94991" },
+            { Icon: Phone, href: "https://wa.me/8801763386000" },
             { Icon: Github, href: "https://github.com/shakil218" },
           ].map(({ Icon, href }, i) => (
             <motion.a
