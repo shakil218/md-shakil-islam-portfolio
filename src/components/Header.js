@@ -27,7 +27,8 @@ export default function Header() {
   const [activeSection, setActiveSection] = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
+  const currentTheme = resolvedTheme || theme || "dark";
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -127,11 +128,12 @@ export default function Header() {
 
         <div className="flex items-center gap-4">
           <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            id="theme-toggle-btn"
+            onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
             className="p-2 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-primary dark:text-white hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
             aria-label="Toggle theme"
           >
-            {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+            {currentTheme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
           </button>
 
           <button

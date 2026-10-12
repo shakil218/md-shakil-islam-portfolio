@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Providers } from "./providers";
 import CustomCursor from "../components/CustomCursor";
+import Preloader from "../components/Preloader";
 
 export const metadata = {
   title: "Md Shakil Islam - Portfolio",
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning={true}
       >
         <Providers>
+          <Preloader />
           <CustomCursor />
           {children}
         </Providers>

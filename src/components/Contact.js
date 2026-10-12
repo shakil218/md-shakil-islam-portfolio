@@ -123,7 +123,7 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
               className="group relative cursor-pointer"
-              onClick={() => window.open('https://www.linkedin.com/in/md-shakil-islam-sagor/', '_blank')}
+              onClick={() => window.open('https://www.linkedin.com/in/shakil-islam-sagor/', '_blank')}
             >
               <div className="relative p-[1.5px] rounded-3xl overflow-hidden transition-all duration-500 group-hover:-translate-y-1">
                 <motion.div 
@@ -139,7 +139,7 @@ export default function Contact() {
                     <Linkedin size={24} strokeWidth={1.5} />
                   </div>
                   <div className="font-bold text-zinc-800 dark:text-gray-200 text-sm">LinkedIn</div>
-                  <div className="text-xs text-zinc-500 dark:text-gray-400 mb-1">md-shakil-islam-sagor</div>
+                  <div className="text-xs text-zinc-500 dark:text-gray-400 mb-1">shakil-islam-sagor</div>
                   <button className="text-[11px] font-bold text-zinc-400 group-hover:text-[#a855f7] dark:group-hover:text-blue-400 flex items-center gap-1 transition-colors uppercase tracking-widest" suppressHydrationWarning>
                     Visit profile <ArrowRight size={14} />
                   </button>

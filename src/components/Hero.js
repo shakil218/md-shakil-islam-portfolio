@@ -120,7 +120,7 @@ export default function Hero() {
           {[
             {
               Icon: Linkedin,
-              href: "https://www.linkedin.com/in/md-shakil-islam-sagor/",
+              href: "https://www.linkedin.com/in/shakil-islam-sagor/",
             },
             { Icon: Phone, href: "https://wa.me/8801763386000" },
             { Icon: Github, href: "https://github.com/shakil218" },
